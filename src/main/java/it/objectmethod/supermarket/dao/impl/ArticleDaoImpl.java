@@ -86,7 +86,7 @@ public class ArticleDaoImpl extends NamedParameterJdbcDaoSupport implements Arti
 		Article article = null;
 
 		String sql = "select a.CODART,a.DESCRIZIONE,\r\n"
-				+ " a.PZCART, i.DESCRIZIONE as DESCIVA, f.DESCRIZIONE as DESCFAMASSORT, a.IDIVA, a.IDFAMASS\r\n"
+				+ " a.PZCART, i.DESCRIZIONE as ivaDesc, f.DESCRIZIONE as famAssDesc, a.IDIVA, a.IDFAMASS\r\n"
 				+ "from articoli a join famassort f on a.IDFAMASS = f.ID \r\n"
 				+ "join iva i on a.IDIVA = i.IDIVA WHERE CODART = ?";
 		BeanPropertyRowMapper<Article> rm = new BeanPropertyRowMapper<Article>(Article.class);

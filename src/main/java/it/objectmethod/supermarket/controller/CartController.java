@@ -37,10 +37,8 @@ public class CartController {
 
 		if (cart.containsKey(codArt)) {
 			articleCart = cart.get(codArt);
-		} else {
-			article = this.articleDao.getArticleByCode(codArt);
-
 		}
+
 		articleCart.setQuantita(articleCart.getQuantita() + 1);
 		cart.put(codArt, articleCart);
 		session.setAttribute("cart", cart);

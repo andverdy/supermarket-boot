@@ -15,8 +15,9 @@ import it.objectmethod.supermarket.dao.IvaDao;
 import it.objectmethod.supermarket.model.Article;
 import it.objectmethod.supermarket.model.FamAssort;
 import it.objectmethod.supermarket.model.Iva;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 @RequestMapping("/articles")
 public class ArticleController {
 

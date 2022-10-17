@@ -46,10 +46,9 @@ public class ArticleController {
             article = articleDao.getArticleByCode(getCod);
         }
 
-        List<Iva> listIva;
         List<FamAssort> listFamAssort;
 
-        listIva = ivaDao.getIva();
+        List<Iva> listIva = ivaDao.getIva();
         listFamAssort = famDao.getFamAssort();
         model.addAttribute("ivaList", listIva);
         model.addAttribute("listFms", listFamAssort);
@@ -65,14 +64,14 @@ public class ArticleController {
         int result = 0;
         String message;
 
-        Article article = new Article();
-        article.setCodArt(codArt);
-        article.setDescrizione(descr);
-        article.setPzCart(pzCart);
-        article.setIdIva(iva);
-        article.setIdFamAss(fam);
+        Article article = Article.builder()
+                .codArt(codArt)
+                .descrizione(descr)
+                .pzCart(pzCart)
+                .idFamAss(fam)
+                .build();
 
-        if (articleDao.getArticleByCode(article.getCodArt()) != null) {
+        if (articleDao.getArticleByCode(codArt) != null) {
             result = articleDao.update(article);
         } else {
             result = articleDao.insert(article);

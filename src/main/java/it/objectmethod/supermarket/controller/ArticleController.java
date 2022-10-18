@@ -3,6 +3,7 @@ package it.objectmethod.supermarket.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import it.objectmethod.supermarket.constants.UtilityConstants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -78,9 +79,9 @@ public class ArticleController {
         }
 
         if (result == 1) {
-            message = "INSERIMENTO AVVENUTO CON SUCCESSO!";
+            message = UtilityConstants.INSERT_OK;
         } else {
-            message = "ERRORE INSERIMENTO!";
+            message = UtilityConstants.INSERT_ERROR;
         }
 
         model.addAttribute("message", message);

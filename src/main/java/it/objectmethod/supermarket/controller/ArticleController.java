@@ -2,6 +2,7 @@ package it.objectmethod.supermarket.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import it.objectmethod.supermarket.constants.UtilityConstants;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -72,7 +73,7 @@ public class ArticleController {
                 .idFamAss(fam)
                 .build();
 
-        if (articleDao.getArticleByCode(codArt) != null) {
+        if (Objects.nonNull(articleDao.getArticleByCode(codArt))) {
             result = articleDao.update(article);
         } else {
             result = articleDao.insert(article);

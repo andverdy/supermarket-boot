@@ -66,7 +66,7 @@ public class ArticleController {
         int result = 0;
         String message;
 
-        Article article = Article.builder()
+        Article article2 = Article.builder()
                 .codArt(codArt)
                 .descrizione(descr)
                 .pzCart(pzCart)
@@ -74,9 +74,9 @@ public class ArticleController {
                 .build();
 
         if (Objects.nonNull(articleDao.getArticleByCode(codArt))) {
-            result = articleDao.update(article);
+            result = articleDao.update(article2);
         } else {
-            result = articleDao.insert(article);
+            result = articleDao.insert(article2);
         }
 
         if (result == 1) {

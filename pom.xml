@@ -11,7 +11,7 @@
     </parent>
     <groupId>it.objectmethod</groupId>
     <artifactId>supermarket-boot</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <name>supermarket-boot</name>
     <description>Demo project for Spring Boot</description>
 
